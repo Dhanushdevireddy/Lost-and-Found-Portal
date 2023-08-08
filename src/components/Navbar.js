@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import {Link} from 'react-router-dom';
+import Modal from "../screens/Modal";
+import Login from "../screens/Login";
+import SignUp from "../screens/SignUp";
 
 export default function Navbar() {
+  const [modalView, setModalView] = useState(false)
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             lostNfound
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,27 +27,29 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/itemsLost">
                   Lost Items
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/itemsFound">
                   Found Items
-                </a>
+                </Link>
               </li>
             </ul>
-            <button className="btn btn-success" style={{"margin":"10px"}} type="submit">
+            <button className="btn btn-success" style={{"margin":"10px"}} type="submit" onClick={()=>{setModalView(true)}}>
               Login
             </button>
-            <button className="btn btn-success" style={{"margin":"10px"}} type="submit">
+            {modalView? <Modal onClose={()=>{setModalView(false)}}><Login/></Modal>:null}
+            <button className="btn btn-success" style={{"margin":"10px"}} type="submit" onClick={()=>{setModalView(true)}}>
               SignUp
             </button>
+            {modalView? <Modal onClose={()=>{setModalView(false)}}><SignUp/></Modal>:null}
           </div>
         </div>
       </nav>
