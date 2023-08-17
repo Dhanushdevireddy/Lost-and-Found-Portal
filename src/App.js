@@ -6,6 +6,8 @@ import{
 } from "react-router-dom";
 import LostItems from './screens/LostItems';
 import FoundItems from './screens/FoundItems';
+import CollectedItems from './screens/CollectedItems';
+import UserProfile from './screens/UserProfile';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/itemsLost" element={<LostItems/>}/>
           <Route exact path="/itemsFound" element={<FoundItems/>}/>
+          <Route exact path="/itemsCollected" element={<CollectedItems/>} />
+          <Route exact path="/userProfile" element={<UserProfile/>} />
         </Routes>
       </div>
     </Router>

@@ -1,12 +1,16 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import NavigationBar from '../components/NavigationBar'
+import Card from '../components/Card'
 
 export default function FoundItems() {
   return (
     <>
-    <Navbar/>
-    <div>FoundItems</div>
+    <NavigationBar/>
+    <Card/>
+    <Card/>
+    <Card/>
+    <Card/>
     <Footer/>
     </>
   )
