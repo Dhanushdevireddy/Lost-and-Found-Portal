@@ -3,6 +3,7 @@ import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 import { Container, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
+import Card from "../components/Card";
 
 export default function UserProfile() {
   return (
@@ -22,13 +23,10 @@ export default function UserProfile() {
             <Accordion.Item eventKey="1">
               <Accordion.Header>Previously Reported Items</Accordion.Header>
               <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="2">

@@ -11,9 +11,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
 export default function NavigationBar() {
-  const [modalView, setModalView] = useState(false)
+  const [loginView, setLoginView] = useState(false)
+  const [signupView, setSignupView] = useState(false)
   return (
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary justify-content-between">
         <Container>
           <Navbar.Brand href="/">lostNfound</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,10 +25,10 @@ export default function NavigationBar() {
               <Nav.Link href="/itemsFound">Found Items</Nav.Link>
               <Nav.Link href="/itemsCollected">Collected Items</Nav.Link>
               <Nav.Link href="/userProfile">Your Profile</Nav.Link>
-              <Button variant="success" style={{"margin":"10px"}} type="submit" onClick={()=>{setModalView(true)}}>Login</Button>
-              {modalView? <Modal onClose={()=>{setModalView(false)}}><Login/></Modal>:null}
-              <Button variant="success" style={{"margin":"10px"}} type="submit" onClick={()=>{setModalView(true)}}>SignUp</Button>
-              {modalView? <Modal onClose={()=>{setModalView(false)}}><SignUp/></Modal>:null}
+              <Button variant="success" style={{"margin-right":"20px"}}type="submit" onClick={()=>{setLoginView(true)}}>Login</Button>
+              {loginView? <Modal onClose={()=>{setLoginView(false)}}><Login/></Modal>:null}
+              <Button variant="success" type="submit" onClick={()=>{setSignupView(true)}}>SignUp</Button>
+              {signupView? <Modal onClose={()=>{setSignupView(false)}}><SignUp/></Modal>:null}
             </Nav>
           </Navbar.Collapse>
         </Container>
