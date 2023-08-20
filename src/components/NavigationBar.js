@@ -24,12 +24,13 @@ export default function NavigationBar() {
               <Nav.Link href="/itemsLost">Lost Items</Nav.Link>
               <Nav.Link href="/itemsFound">Found Items</Nav.Link>
               <Nav.Link href="/itemsCollected">Collected Items</Nav.Link>
-              <Nav.Link href="/userProfile">Your Profile</Nav.Link>
-              <Button variant="success" style={{"margin-right":"20px"}}type="submit" onClick={()=>{setLoginView(true)}}>Login</Button>
+            </Nav>
+            <Nav.Link href="/userProfile">User Profile</Nav.Link>
+            <Button variant="danger" style={{"margin-left":"20px"}} type="submit">Logout</Button>
+            <Button variant="success" style={{"margin-right":"20px","margin-left":"20px"}} type="submit" onClick={()=>{setLoginView(true)}}>Login</Button>
               {loginView? <Modal onClose={()=>{setLoginView(false)}}><Login/></Modal>:null}
               <Button variant="success" type="submit" onClick={()=>{setSignupView(true)}}>SignUp</Button>
               {signupView? <Modal onClose={()=>{setSignupView(false)}}><SignUp/></Modal>:null}
-            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
