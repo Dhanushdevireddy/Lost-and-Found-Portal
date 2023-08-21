@@ -1,15 +1,15 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import { PrismaClient } from '@prisma/client';
-import passport from 'passport';
+// import passport from 'passport';
 
 
 const prisma = new PrismaClient();
 const app = express();
-const port = 3000;
+const port = 8000;
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use(bodyParser.json());
 
@@ -21,15 +21,15 @@ interface User {
 // Serialize user to the session
 
 
-// Deserialize user from the session
-passport.deserializeUser((id, done) => {
-  // Fetch the user by ID from your database
-  const user: User = {
-    id: id as string,
-    username: 'exampleUsername', // Replace with actual user data retrieval
-  };
-  done(null, user);
-});
+// // Deserialize user from the session
+// passport.deserializeUser((id, done) => {
+//   // Fetch the user by ID from your database
+//   const user: User = {
+//     id: id as string,
+//     username: 'exampleUsername', // Replace with actual user data retrieval
+//   };
+//   done(null, user);
+// });
 
 
 interface ObjectData {

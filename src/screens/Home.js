@@ -17,21 +17,6 @@ export default function Home() {
             </div>
           </Col>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="name" placeholder="Name" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicNum">
-              <Form.Label>Contact Number</Form.Label>
-              <Form.Control type="num" placeholder="Contact Number" />
-            </Form.Group>
-
             <Form.Group className="mb-3" controlId="formBasicItem">
               <Form.Label>Item Name</Form.Label>
               <Form.Control type="item" placeholder="Item Name" />
@@ -42,24 +27,42 @@ export default function Home() {
               <Form.Control type="fola" placeholder="Found or Lost at" />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicIamge">
+            <Form.Group className="mb-3" controlId="formBasicDot">
+              <Form.Label>Date and time lost or found at</Form.Label>
+              <Form.Control
+                type="dot"
+                placeholder="Date and Time lost or found at"
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicImage">
               <Form.Label>Image of the Item</Form.Label>
               <Form.Control type="file" />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicItemLost">
-              <Form.Check type="radio" label="Item Lost" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicItemFound">
-              <Form.Check type="radio" label="Item Found" />
-            </Form.Group>
+            {["radio"].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check
+                  inline
+                  label="Item Found"
+                  name="group1"
+                  type={type}
+                  id={`inline-${type}-1`}
+                />
+                <Form.Check
+                  inline
+                  label="Item Lost"
+                  name="group1"
+                  type={type}
+                  id={`inline-${type}-2`}
+                />
+              </div>
+            ))}
 
             <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
-          
         </Row>
       </Container>
       <Footer />

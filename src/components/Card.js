@@ -7,7 +7,7 @@ export default function Card() {
     <Container>
       <Row>
         <Col xs="12" md="6">
-        <Image src="" alt="image" rounded />
+        <Image src="../Gutenberg_Bible,_Lenox_Copy,_New_York_Public_Library,_2009._Pic_01.jpg" alt="image" rounded />
         </Col>
         <Col xs="12" md="6">
           <p>Item Name</p>

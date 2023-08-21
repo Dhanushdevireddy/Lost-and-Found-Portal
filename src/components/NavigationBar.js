@@ -7,8 +7,6 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
-import Form from "react-bootstrap/Form";
-import { Col, Row } from "react-bootstrap";
 
 export default function NavigationBar() {
   const navigate = useNavigate();
@@ -25,20 +23,6 @@ export default function NavigationBar() {
             <Nav.Link href="/itemsFound">Found Items</Nav.Link>
             <Nav.Link href="/itemsCollected">Collected Items</Nav.Link>
           </Nav>
-          <Form inline>
-            <Row>
-              <Col xs="auto">
-                <Form.Control
-                  type="text"
-                  placeholder="Search"
-                  className=" mr-sm-2"
-                />
-              </Col>
-              <Col xs="auto">
-                <Button type="submit">Submit</Button>
-              </Col>
-            </Row>
-          </Form>
           <Nav.Link href="/userProfile" style={{ "margin-left": "20px" }}>
             User Profile
           </Nav.Link>
