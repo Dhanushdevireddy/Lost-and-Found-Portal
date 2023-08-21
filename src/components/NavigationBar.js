@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 //import { Link } from "react-router-dom";
-import Modal from "../screens/Modal";
-import Login from "../screens/Login";
-import SignUp from "../screens/SignUp";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 //import NavDropdown from "react-bootstrap/NavDropdown";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 export default function NavigationBar() {
-  const [loginView, setLoginView] = useState(false)
-  const [signupView, setSignupView] = useState(false)
+  const navigate = useNavigate();
+
   return (
       <Navbar expand="lg" className="bg-body-tertiary justify-content-between">
         <Container>
@@ -27,10 +25,8 @@ export default function NavigationBar() {
             </Nav>
             <Nav.Link href="/userProfile">User Profile</Nav.Link>
             <Button variant="danger" style={{"margin-left":"20px"}} type="submit">Logout</Button>
-            <Button variant="success" style={{"margin-right":"20px","margin-left":"20px"}} type="submit" onClick={()=>{setLoginView(true)}}>Login</Button>
-              {loginView? <Modal onClose={()=>{setLoginView(false)}}><Login/></Modal>:null}
-              <Button variant="success" type="submit" onClick={()=>{setSignupView(true)}}>SignUp</Button>
-              {signupView? <Modal onClose={()=>{setSignupView(false)}}><SignUp/></Modal>:null}
+            <Button variant="success" style={{"margin-right":"20px","margin-left":"20px"}} type="submit" onClick={()=>{navigate('/login')}}>Login</Button>
+            <Button variant="success" type="submit" onClick={()=>{navigate('/signup')}}>SignUp</Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>

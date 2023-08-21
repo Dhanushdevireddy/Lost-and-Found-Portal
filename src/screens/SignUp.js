@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -7,6 +7,7 @@ export default function SignUp() {
   return (
     <Container>
       <Row>
+        <Col>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -27,6 +28,7 @@ export default function SignUp() {
             Submit
           </Button>
         </Form>
+        </Col>
       </Row>
     </Container>
   );
