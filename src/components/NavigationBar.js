@@ -43,15 +43,6 @@ export default function NavigationBar() {
           >
             Login
           </Button>
-          <Button
-            variant="success"
-            type="submit"
-            onClick={() => {
-              navigate("/signup");
-            }}
-          >
-            SignUp
-          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
