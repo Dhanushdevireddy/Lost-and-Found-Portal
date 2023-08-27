@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
-import Card from "../components/Card";
+import CardRendering from '../components/CardRendering'
 import SearchBar from "../components/SearchBar";
 
 export default function CollectedItems() {
@@ -9,10 +9,10 @@ export default function CollectedItems() {
     <>
       <NavigationBar />
       <SearchBar/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
+      <CardRendering/>
+    <CardRendering/>
+    <CardRendering/>
+    <CardRendering/>
       <Footer />
     </>
   );

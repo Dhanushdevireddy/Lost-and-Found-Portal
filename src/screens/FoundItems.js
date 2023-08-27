@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../components/Footer'
 import NavigationBar from '../components/NavigationBar'
-import Card from '../components/Card'
+import CardRendering from '../components/CardRendering'
 import SearchBar from '../components/SearchBar'
 
 export default function FoundItems() {
@@ -9,10 +9,10 @@ export default function FoundItems() {
     <>
     <NavigationBar/>
     <SearchBar/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
+    <CardRendering/>
+    <CardRendering/>
+    <CardRendering/>
+    <CardRendering/>
     <Footer/>
     </>
   )

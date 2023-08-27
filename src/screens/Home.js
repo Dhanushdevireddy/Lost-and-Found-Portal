@@ -12,36 +12,47 @@ export default function Home() {
       <NavigationBar />
       <Container>
         <Row>
-          <Col xs="12">
+          <Col xs="12" md="6" className="text-center">
             <div className="fs-2" style={{ margin: "50px" }}>
-              Did you lose or find an item? Please upload its details here.
+              Lost an item? Lets see if there in our found items database.
+            </div>
+          </Col>
+          <Col xs="12" md="6" className="text-center">
+            <div className="fs-2" style={{ margin: "50px" }}>
+              Found an item? Lets see if there in our lost items database.
+            </div>
+          </Col>
+          <Col xs="12" className="text-center">
+            <div className="fs-2" style={{ margin: "50px" }}>
+              Didn't find the item in our database? Please upload its details
+              here.
             </div>
           </Col>
           <Col xs={12} lg={{ span: 6, offset: 3 }}>
-            <Form>
+            <Form className="text-end">
               <Form.Group as={Row} className="mb-3" controlId="formBasicItem">
-                <Form.Label column sm="4">
+                <Form.Label column sm="5">
                   Item Name
                 </Form.Label>
-                <Col sm="8">
+                <Col sm="7">
                   <Form.Control type="item" placeholder="Item Name" />
                 </Col>
               </Form.Group>
 
               <Form.Group as={Row} className="mb-3" controlId="formBasicFola">
-                <Form.Label column sm="4">
+                <Form.Label column sm="5">
                   Found or Lost at
                 </Form.Label>
-                <Col sm="8">
+                <Col sm="7">
                   <Form.Control type="fola" placeholder="Found or Lost at" />
                 </Col>
               </Form.Group>
 
               <Form.Group as={Row} className="mb-3" controlId="formBasicDot">
-                <Form.Label column sm="4">
+                <Form.Label column sm="5">
                   Date and time lost or found at
                 </Form.Label>
-                <Col sm="8">
+                <Col sm="7">
                   <Form.Control
                     type="dot"
                     placeholder="Date and Time lost or found at"
@@ -50,15 +61,15 @@ export default function Home() {
               </Form.Group>
 
               <Form.Group as={Row} className="mb-3" controlId="formBasicImage">
-                <Form.Label column sm="4">
+                <Form.Label column sm="5">
                   Image of the Item
                 </Form.Label>
-                <Col sm="8">
+                <Col sm="7">
                   <Form.Control type="file" />
                 </Col>
               </Form.Group>
 
-              <Col>
+              <Col className="text-center">
                 {["radio"].map((type) => (
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
@@ -79,9 +90,11 @@ export default function Home() {
                 ))}
               </Col>
 
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
+              <Col className="text-center">
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Col>
             </Form>
           </Col>
         </Row>

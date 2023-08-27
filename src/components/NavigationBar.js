@@ -6,10 +6,9 @@ import Navbar from "react-bootstrap/Navbar";
 //import NavDropdown from "react-bootstrap/NavDropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from '@react-oauth/google';
 
 export default function NavigationBar() {
-  const navigate = useNavigate();
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary justify-content-between">
@@ -28,21 +27,12 @@ export default function NavigationBar() {
           </Nav.Link>
           <Button
             variant="danger"
-            style={{ "margin-left": "20px" }}
+            style={{ "margin-left": "20px","margin-right":"20px" }}
             type="submit"
           >
             Logout
           </Button>
-          <Button
-            variant="success"
-            style={{ "margin-right": "20px", "margin-left": "20px" }}
-            type="submit"
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Login
-          </Button>
+          <GoogleLogin onSuccess={()=>{}} />
         </Navbar.Collapse>
       </Container>
     </Navbar>

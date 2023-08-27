@@ -8,7 +8,7 @@ import LostItems from './screens/LostItems';
 import FoundItems from './screens/FoundItems';
 import CollectedItems from './screens/CollectedItems';
 import UserProfile from './screens/UserProfile';
-import Login from './screens/Login';
+
 
 function App() {
   return (
@@ -20,7 +20,6 @@ function App() {
           <Route exact path="/itemsFound" element={<FoundItems/>}/>
           <Route exact path="/itemsCollected" element={<CollectedItems/>} />
           <Route exact path="/userProfile" element={<UserProfile/>} />
-          <Route exact path="/login" element={<Login/>} />
         </Routes>
       </div>
     </Router>
