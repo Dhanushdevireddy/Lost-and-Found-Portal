@@ -1,25 +1,67 @@
 import React from "react";
 import Footer from "../components/Footer";
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import NavigationBar from "../components/NavigationBar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <>
       <NavigationBar />
       <Container>
         <Row>
-          <Col xs="12" md="6" className="text-center">
+          <Col xs="12" lg="6" className="text-center">
             <div className="fs-2" style={{ margin: "50px" }}>
-              Lost an item? Lets see if there in our found items database.
+              <Card>
+                <Card.Img
+                  style={{ height: "18rem", objectFit: "contain" }}
+                  variant="top"
+                  src="https://img.freepik.com/premium-vector/blank-a4-paper-template-brochure-mockup_97886-7353.jpg?w=2000"
+                />
+                <Card.Body>
+                  <Card.Title>
+                    Lost an item? Lets see if it is there in our found items
+                    database.
+                  </Card.Title>
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      navigate("/itemsFound");
+                    }}
+                  >
+                    Found Items
+                  </Button>
+                </Card.Body>
+              </Card>
             </div>
           </Col>
-          <Col xs="12" md="6" className="text-center">
+          <Col xs="12" lg="6" className="text-center">
             <div className="fs-2" style={{ margin: "50px" }}>
-              Found an item? Lets see if there in our lost items database.
+              <Card>
+                <Card.Img
+                  style={{ height: "18rem", objectFit: "contain" }}
+                  variant="top"
+                  src="https://img.freepik.com/premium-vector/blank-a4-paper-template-brochure-mockup_97886-7353.jpg?w=2000"
+                />
+                <Card.Body>
+                  <Card.Title>
+                    Found an item? Lets see if it is there in our lost items
+                    database.
+                  </Card.Title>
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      navigate("/itemsLost");
+                    }}
+                  >
+                    Lost Items
+                  </Button>
+                </Card.Body>
+              </Card>
             </div>
           </Col>
           <Col xs="12" className="text-center">
