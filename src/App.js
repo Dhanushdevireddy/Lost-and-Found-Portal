@@ -4,11 +4,8 @@ import{
   Routes,
   Route
 } from "react-router-dom";
-import LostItems from './screens/LostItems';
-import FoundItems from './screens/FoundItems';
-import CollectedItems from './screens/CollectedItems';
 import UserProfile from './screens/UserProfile';
-
+import Items from './screens/Items';
 
 function App() {
   return (
@@ -16,10 +13,10 @@ function App() {
       <div>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/itemsLost" element={<LostItems/>}/>
-          <Route exact path="/itemsFound" element={<FoundItems/>}/>
-          <Route exact path="/itemsCollected" element={<CollectedItems/>} />
           <Route exact path="/userProfile" element={<UserProfile/>} />
+          <Route exact path="/itemsLost" element={<Items type={"lost"}/>} />
+          <Route exact path="/itemsFound" element={<Items type={"found"}/>} />
+          <Route exact path="/itemsCollected" element={<Items type={"collected"}/>} />
         </Routes>
       </div>
     </Router>

@@ -35,8 +35,6 @@ export default function NavigationBar() {
           >
             Logout
           </Button></>:<GoogleLogin onSuccess={(res)=>{console.log(res)}} onError={(error)=>{console.log(error)}}/>}
-          
-          
         </Navbar.Collapse>
       </Container>
     </Navbar>
