@@ -7,11 +7,11 @@ export default function CardRendering(props) {
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" alt="image" src={props.image} />
       <Card.Body>
-        <Card.Title>{props.itemName}</Card.Title>
-        <Card.Text>{props.place}</Card.Text>
-        <Card.Text>{props.reportedBy}</Card.Text>
-        <Card.Text>{props.date}</Card.Text>
-        <Card.Text>{props.emailId}</Card.Text>
+        <Card.Title>Item Name: {props.itemName}</Card.Title>
+        <Card.Text>Place Found or Lost at: {props.place}</Card.Text>
+        <Card.Text>Reported by: {props.reportedBy}</Card.Text>
+        <Card.Text>Date Lost or found at: {props.date}</Card.Text>
+        <Card.Text>Email id: {props.emailId}</Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
